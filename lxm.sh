@@ -20,16 +20,16 @@ basedir=$(dirname $(readlink -f $0))
 
 case $1 in
 	ls)
-		$basedir/lxm-ls.sh ${@:2}
+		$basedir/lxm-ls.sh "${@:2}"
 		;;
 	start)
-		$basedir/lxm-start.sh ${@:2}
+		$basedir/lxm-start.sh "${@:2}"
 		;;
 	stop)
-		$basedir/lxm-stop.sh ${@:2}
+		$basedir/lxm-stop.sh "${@:2}"
 		;;
 	run)
-		$basedir/lxm-run.sh ${@:2}
+		$basedir/lxm-run.sh "${@:2}"
 		;;
 	-h)
 		show_help
