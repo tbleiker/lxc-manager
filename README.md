@@ -1,6 +1,6 @@
 # lxcManager
 
-## Instalaltion
+## Quick Installation
 
 Clone the repository.
 ```
