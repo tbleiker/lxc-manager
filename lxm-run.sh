@@ -45,8 +45,19 @@ shift $((OPTIND-1))
 #	exit 1
 #fi
 
+if [[ $# -eq 2 ]]; then
+	filter="$1"
+	commands=${@:2}
+elif [[ $# -eq 1 ]]; then
+	filter=""
+	commands=${@:1}
+else
+	echo "Too many arguments given."
+	exit 1
+fi
+
 # get filtered list of running containers
-filter="$1"
+#filter="$1"
 if [[ -z $groups ]]; then
 	containers=$(lxc-ls --running "$filter")
 else
@@ -59,7 +70,7 @@ if [[ -z $containers ]]; then
 fi
 
 # get command(s)
-commands=${@:2}
+#commands=${@:2}
 
 # run command(s) in each container
 for container in $containers; do
