@@ -39,25 +39,20 @@ done
 
 shift $((OPTIND-1))
 
-# exit if more than one argument is left
-#if [[ ! -z ${@:2} ]]; then
-#	show_help
-#	exit 1
-#fi
-
+# if two arguments are left: get filter and command
 if [[ $# -eq 2 ]]; then
-	filter="$1"
-	commands=${@:2}
+	filter=$1
+	cmd=${@:2}
+# if only one argument is left: assume that this is the command, set filter to ''
 elif [[ $# -eq 1 ]]; then
 	filter=""
-	commands=${@:1}
+	cmd=${@:1}
 else
 	echo "Too many arguments given."
 	exit 1
 fi
 
 # get filtered list of running containers
-#filter="$1"
 if [[ -z $groups ]]; then
 	containers=$(lxc-ls --running "$filter")
 else
@@ -69,15 +64,13 @@ if [[ -z $containers ]]; then
 	echo "No container(s) to start."
 fi
 
-# get command(s)
-#commands=${@:2}
-
 # run command(s) in each container
 for container in $containers; do
 	echo "###########################################################################################"
 	echo "# $container"
 	echo "###########################################################################################"
-	lxc-attach -n $container -- $commands
+	# use eval in order to get commands with e.g. pipes excecuted correctly
+	eval "lxc-attach -n $container -- $cmd"
 	echo ""
 done
 
