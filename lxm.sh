@@ -10,6 +10,7 @@ function show_help {
 	echo "  ls					list container(s)"
 	echo "  start				start container(s)"
 	echo "  stop				stop container(s)"
+	echo "  restart			restart container(s)"
 	echo "  run					run command in container(s)"
 	echo ""
 	echo "optional arguments:"
@@ -27,6 +28,9 @@ case $1 in
 		;;
 	stop)
 		$basedir/lxm-stop.sh "${@:2}"
+		;;
+	restart)
+		$basedir/lxm-restart.sh "${@:2}"
 		;;
 	run)
 		$basedir/lxm-run.sh "${@:2}"
