@@ -7,12 +7,12 @@ function show_help {
 	echo "lxcManager: lxm-ls - list container(s)"
 	echo ""
 	echo "positional arguments:"
-	echo "  <filter>			regexp to be applied on the container list"
+	echo "  <filter>        regexp to be applied on the container list"
 	echo ""
 	echo "optional arguments:"
-	echo "  -h					show this help message and exit"
-	echo "  -g <groups>		groups (comma separated) the container must be a member of"
-	echo "  -F					show all fields"
+	echo "  -h              show this help message and exit"
+	echo "  -g <groups>     groups (comma separated) the container must be a member of"
+	echo "  -F              show all fields"
 }
 
 # A POSIX variable

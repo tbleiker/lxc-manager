@@ -7,12 +7,12 @@ function show_help {
 	echo "lxcManager: lxm-start - run command in container(s)"
 	echo ""
 	echo "positional arguments:"
-	echo "  <filter>			regexp to be applied on the container list"
-	echo "  <command>			command to run in each container"
+	echo "  <filter>        regexp to be applied on the container list"
+	echo "  <command>       command to run in each container"
 	echo ""
 	echo "optional arguments:"
-	echo "  -h					show this help message and exit"
-	echo "  -g <groups>		groups (comma separated) the container must be a member of"
+	echo "  -h              show this help message and exit"
+	echo "  -g <groups>     groups (comma separated) the container must be a member of"
 }
 
 # A POSIX variable

@@ -7,11 +7,11 @@ function show_help {
 	echo "lxcManager: lxm-stop - stop Container(s)"
 	echo ""
 	echo "positional arguments:"
-	echo "  <filte>			regexp to be applied on the container list"
+	echo "  <filte>         regexp to be applied on the container list"
 	echo ""
 	echo "optional arguments:"
-	echo "  -h					show this help message and exit"
-	echo "  -g <groups>		groups (comma separated) the container must be a member of"
+	echo "  -h              show this help message and exit"
+	echo "  -g <groups>     groups (comma separated) the container must be a member of"
 }
 
 # A POSIX variable
