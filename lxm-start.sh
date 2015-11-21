@@ -54,7 +54,7 @@ fi
 
 # exit if list is emtpy
 if [[ -z $containers ]]; then
-	echo "No container(s) to stop."
+	echo "No container(s) to start."
 fi
 
 # confirm if no FILTER is given
